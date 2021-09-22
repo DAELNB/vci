@@ -49,6 +49,7 @@ BEGIN
 	                
 	                
 	                // zmena v PC
+	                // zmena 2 v pC
 	            END_IF;
 	            
 	        END_REGION
