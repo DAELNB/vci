@@ -23,9 +23,6 @@ VERSION : 0.1
 
 
 BEGIN
-
-// This file was been edited by DAELNB via browser
-
 	REGION enable
 	    
 	    #R_TRIG_0(CLK := #enable);
@@ -50,6 +47,8 @@ BEGIN
 	            IF #Visu.actPage <> #Visu.memPage THEN
 	                #Visu.memPage := #Visu.actPage;
 	                
+	                
+	                // zmena v PC
 	            END_IF;
 	            
 	        END_REGION
