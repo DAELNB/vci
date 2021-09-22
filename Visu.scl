@@ -1,0 +1,72 @@
+﻿FUNCTION_BLOCK "Visu"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      enable : Bool;
+   END_VAR
+
+   VAR_IN_OUT 
+      Visu : "Visu_type";
+      MotorCem : "MotorCem_type";
+      Motor : Array[0.."MAX_MOTOR_IDX"] of "Motor_type";
+   END_VAR
+
+   VAR 
+      R_TRIG_0 {InstructionName := 'R_TRIG'; LibVersion := '1.0'; S7_SetPoint := 'False'} : R_TRIG;
+      iStatus { S7_SetPoint := 'True'} : UInt;
+   END_VAR
+
+   VAR CONSTANT 
+      PG10_MOTORCEM : UInt := 10;
+      PG20_MOTOR : UInt := 20;
+   END_VAR
+
+
+BEGIN
+	REGION enable
+	    
+	    #R_TRIG_0(CLK := #enable);
+	    IF #R_TRIG_0.Q THEN
+	        #iStatus := "ERR_OK";
+	    END_IF;
+	    
+	    IF NOT #enable THEN
+	        #iStatus := "ERR_FUB_NOT_ENABLED";
+	        RETURN;
+	    END_IF;
+	    
+	END_REGION
+	
+	
+	CASE #Visu.actPage OF
+	        
+	    #PG10_MOTORCEM:
+	        
+	        REGION #PG10_MOTORCEM
+	            
+	            IF #Visu.actPage <> #Visu.memPage THEN
+	                #Visu.memPage := #Visu.actPage;
+	                
+	            END_IF;
+	            
+	        END_REGION
+	        
+	    #PG20_MOTOR:
+	        
+	        REGION #PG20_MOTOR
+	            
+	            IF #Visu.actPage <> #Visu.memPage THEN
+	                #Visu.memPage := #Visu.actPage;
+	                
+	            END_IF;
+	            
+	            #Motor["MOTOR1"].Status.temp := #Visu.Pg20_Motor.Motor1.iofMotorTemp;
+	            
+	            #Visu.Pg20_Motor.Motor1.idxTextListPower := 1;
+	            #Visu.Pg20_Motor.Motor2.idxTextListPower := 2;
+	            
+	        END_REGION
+	        
+	END_CASE;
+END_FUNCTION_BLOCK
+
