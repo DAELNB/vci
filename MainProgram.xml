@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V17" />
+  <DocumentInfo>
+    <Created>2021-09-22T08:50:40.0817292Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>SINAMICS Startdrive Advanced</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>SINAMICS Startdrive G130, G150, S120, S150, SINAMICS MV, S210</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>SINAMICS Startdrive G110M, G120, G120C, G120D, G120P, G115D</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Advanced / Unified PC</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="Hmi" Datatype="&quot;Visu_type&quot;" Accessibility="Public">
+      <Sections>
+        <Section Name="None">
+          <Member Name="actPage" Datatype="UInt" />
+          <Member Name="memPage" Datatype="UInt" />
+          <Member Name="Pg10_MotorCem" Datatype="&quot;VisuPg10MotorCem_type&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="btnTurnOn" Datatype="Bool" />
+                <Member Name="btnReset" Datatype="Bool" />
+                <Member Name="checkboxEstop" Datatype="Bool" />
+                <Member Name="checkboxStop" Datatype="Bool" />
+                <Member Name="iofMotorTemp" Datatype="Real" />
+                <Member Name="picMotorError" Datatype="Bool" />
+                <Member Name="picTurnedOn" Datatype="Bool" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="Pg20_Motor" Datatype="&quot;VisuPg20Motor_type&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="Motor1" Datatype="&quot;VisuFcp_Motor_type&quot;">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="btnTurnOn" Datatype="Bool" />
+                      <Member Name="btnReset" Datatype="Bool" />
+                      <Member Name="checkboxEstop" Datatype="Bool" />
+                      <Member Name="checkboxStop" Datatype="Bool" />
+                      <Member Name="iofMotorTemp" Datatype="Real" />
+                      <Member Name="picMotorError" Datatype="Bool" />
+                      <Member Name="picTurnedOn" Datatype="Bool" />
+                      <Member Name="idxTextListPower" Datatype="Int" />
+                      <Member Name="fanOn" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="Motor2" Datatype="&quot;VisuFcp_Motor_type&quot;">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="btnTurnOn" Datatype="Bool" />
+                      <Member Name="btnReset" Datatype="Bool" />
+                      <Member Name="checkboxEstop" Datatype="Bool" />
+                      <Member Name="checkboxStop" Datatype="Bool" />
+                      <Member Name="iofMotorTemp" Datatype="Real" />
+                      <Member Name="picMotorError" Datatype="Bool" />
+                      <Member Name="picTurnedOn" Datatype="Bool" />
+                      <Member Name="idxTextListPower" Datatype="Int" />
+                      <Member Name="fanOn" Datatype="Bool" />
+                    </Section>
+                  </Sections>
+                </Member>
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="PopUp_Motor" Datatype="&quot;VisuFcpPop_Motor_type&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="iofTemp" Datatype="Real" />
+              </Section>
+            </Sections>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Static">
+    <Member Name="MotorCem" Datatype="&quot;MotorCem_type&quot;" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="None"><Member Name="Cmd" Datatype="&quot;MotorCemCmd_type&quot;"><Sections><Section Name="None"><Member Name="turnOn" Datatype="Bool" /><Member Name="moveFw" Datatype="Bool" /><Member Name="moveRw" Datatype="Bool" /><Member Name="stop" Datatype="Bool" /><Member Name="reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Status" Datatype="&quot;MotorCemStatus_type&quot;"><Sections><Section Name="None"><Member Name="turnedOn" Datatype="Bool" /><Member Name="movingFw" Datatype="Bool" /><Member Name="movingRw" Datatype="Bool" /><Member Name="stopped" Datatype="Bool" /><Member Name="temp" Datatype="Real" /><Member Name="error" Datatype="Bool" /><Member Name="eStopActive" Datatype="Bool" /></Section></Sections></Member><Member Name="Setting" Datatype="&quot;MotorCemSetting_type&quot;"><Sections><Section Name="None"><Member Name="tempLimit" Datatype="Bool" /></Section></Sections></Member><Member Name="Control" Datatype="&quot;MotorCemControl_type&quot;"><Sections><Section Name="None"><Member Name="turnOn" Datatype="Bool" /><Member Name="moveFw" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="Motor" Datatype="Array[0..&quot;MAX_MOTOR_IDX&quot;] of &quot;Motor_type&quot;" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="None"><Member Name="Cmd" Datatype="&quot;MotorCmd_type&quot;"><Sections><Section Name="None"><Member Name="turnOn" Datatype="Bool" /><Member Name="moveFw" Datatype="Bool" /><Member Name="moveRw" Datatype="Bool" /><Member Name="stop" Datatype="Bool" /><Member Name="reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Status" Datatype="&quot;MotorStatus_type&quot;"><Sections><Section Name="None"><Member Name="turnedOn" Datatype="Bool" /><Member Name="movingFw" Datatype="Bool" /><Member Name="movingRw" Datatype="Bool" /><Member Name="stopped" Datatype="Bool" /><Member Name="temp" Datatype="Real" /><Member Name="error" Datatype="Bool" /><Member Name="eStopActive" Datatype="Bool" /><Member Name="fanOn" Datatype="Bool" /></Section></Sections></Member><Member Name="Setting" Datatype="&quot;MotorSetting_type&quot;"><Sections><Section Name="None"><Member Name="tempLimit" Datatype="Bool" /></Section></Sections></Member><Member Name="Control" Datatype="&quot;MotorControl_type&quot;"><Sections><Section Name="None"><Member Name="turnOn" Datatype="Bool" /><Member Name="moveFw" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="Visu_0" Datatype="&quot;Visu&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enable" Datatype="Bool" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="Visu" Datatype="&quot;Visu_type&quot;"><Sections><Section Name="None" /></Sections></Member><Member Name="MotorCem" Datatype="&quot;MotorCem_type&quot;"><Sections><Section Name="None" /></Sections></Member><Member Name="Motor" Datatype="Array[0..&quot;MAX_MOTOR_IDX&quot;] of &quot;Motor_type&quot;"><Sections><Section Name="None" /></Sections></Member></Section><Section Name="Static"><Member Name="R_TRIG_0" Datatype="R_TRIG" Version="1.0"><Sections><Section Name="Input"><Member Name="CLK" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Q" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="Stat_Bit" Datatype="Bool" /></Section></Sections></Member><Member Name="iStatus" Datatype="UInt" /></Section></Sections></Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsRetainMemResEnabled>false</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>MainProgram</Name>
+      <Number>1</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Cmd" />
+        <Component Name="turnOn" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Cmd" />
+        <Component Name="stop" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Status" />
+        <Component Name="eStopActive" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Status" />
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Cmd" />
+        <Component Name="moveFw" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Cmd" />
+        <Component Name="moveRw" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Cmd" />
+        <Component Name="reset" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Control" />
+        <Component Name="turnOn" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Control" />
+        <Component Name="moveFw" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="MotorCem" />
+        <Component Name="Status" />
+        <Component Name="error" />
+      </Symbol>
+    </Access>
+    <Call UId="31">
+      <CallInfo Name="MotorCtrlCem" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="32">
+          <Component Name="MotorCtrlCem_DB" />
+        </Instance>
+        <Parameter Name="diStart" Section="Input" Type="Bool" />
+        <Parameter Name="diStop" Section="Input" Type="Bool" />
+        <Parameter Name="diEstop" Section="Input" Type="Bool" />
+        <Parameter Name="diTemp" Section="Input" Type="Real" />
+        <Parameter Name="diMoveFw" Section="Input" Type="Bool" />
+        <Parameter Name="diMoveRw" Section="Input" Type="Bool" />
+        <Parameter Name="diReset" Section="Input" Type="Bool" />
+        <Parameter Name="doMotorOn" Section="Output" Type="Bool" />
+        <Parameter Name="doMoveFw" Section="Output" Type="Bool" />
+        <Parameter Name="doMotorError" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="33">
+      <Powerrail />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="21" />
+      <NameCon UId="31" Name="diStart" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="diStop" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="23" />
+      <NameCon UId="31" Name="diEstop" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="24" />
+      <NameCon UId="31" Name="diTemp" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="25" />
+      <NameCon UId="31" Name="diMoveFw" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="diMoveRw" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="27" />
+      <NameCon UId="31" Name="diReset" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="doMotorOn" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="31" Name="doMoveFw" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="31" Name="doMotorError" />
+      <IdentCon UId="30" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Hmi" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="MotorCem" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Motor" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="Visu" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="26">
+          <Component Name="Visu_0" />
+        </Instance>
+        <Parameter Name="enable" Section="Input" Type="Bool" />
+        <Parameter Name="Visu" Section="InOut" Type="&quot;Visu_type&quot;" />
+        <Parameter Name="MotorCem" Section="InOut" Type="&quot;MotorCem_type&quot;" />
+        <Parameter Name="Motor" Section="InOut" Type="Array[0..&quot;MAX_MOTOR_IDX&quot;] of &quot;Motor_type&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <Powerrail />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="enable" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="Visu" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="MotorCem" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="24" />
+      <NameCon UId="25" Name="Motor" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="12" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="13" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>
